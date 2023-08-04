@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NumEp - nameCurso - AstryTech</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="./index.css">
+    </head>
+    <body>
+        <iframe id="headerFrame" src="../header.html" frameborder="0"></iframe>
+        <!-- Web Site -->
+        <main>
+            <!-- List Videos -->
+            <div id="listVideos">
+                <div id="headList">
+                    <button id="backBtn">&lt; voltar</button>
+                </div>
+                <ul id="listVideos">
+                    <li class="liLoad">
+                        Carregando
+                    </li>
+                </ul>
+            </div>
+            <!-- Video -->
+            <div id="main">
+                <h3 data-curso="title">Titulos do curso</h3>
+                <hr><br>
+                <video id="videoAula" controls preload="auto">
+                    <source src="" type="video/mp4">
+                </video>
+                <h2 data-curso="titleEp">Titulo da aula</h2>
+                <p data-curso="desc">Descrição da aula</p>
+                <br><hr divComment><br>
+                <!-- Comentários -->
+                <div>
+                    <h3>Comentários:</h3>
+                    <p id="messageAlert" active="false">Ei! Tenha mais respeito com os outros, existem palavrões em sua mensagem.</p>
+                    <div data-message="inputText">
+                        <textarea placeholder="Escreva aqui seu comentário!"></textarea>
+                        <button data-message="btnSend" onclick="sendMessage()">enviar</button>
+                    </div>
+                    <ul data-comments="list">
+                        <li class="liLoad">
+                            Carregando
+                        </li>
+                    </ul>
+                </div>
+                <br><br>
+            </div>
+        </main>
+    </body>
+    <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-database-compat.js"></script>
+    <script src="../../js/firebase.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="./filter.js"></script>
+    <script src="./index.js"></script>
+</html>

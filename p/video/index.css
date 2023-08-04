@@ -1,0 +1,383 @@
+@import url('../../css/default.css');
+
+body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+html {
+    height: 100%;
+    display: block;
+    contain: layout;
+}
+
+button#backBtn {
+    width: 5em;
+    height: 2em;
+    background-color: #eee;
+    color: var(--color0);
+    border: 0px;
+    border-radius: 0.25em;
+    font-weight: bolder;
+    font-family: 'Acme';
+}
+
+button#backBtn:hover {
+    background: white;
+    color: rgb(28, 148, 207);
+    cursor: pointer;
+}
+
+button#backBtn:active {
+    color: white;
+    background-color: var(--color0);
+}
+
+/* Estrutura do site */
+
+main {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 25% 75%;
+}
+
+div#headList {
+    height: 3em;
+    background-color: #445;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-inline: 1em;
+}
+
+div#listVideos {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    background-color: #1b1b2b;
+}
+
+ul#listVideos {
+    width: 100%;
+}
+
+ul#listVideos>li {
+    width: 100%;
+    height: 2.5em;
+    display: flex;
+    align-items: center;
+    padding-inline: 1em;
+    background-color: #223;
+    font-size: 12pt;
+    color: #ddd;
+    font-family: monospace;
+    font-weight: 600;
+    user-select: none;
+}
+
+ul#listVideos>li:hover {
+    background-color: #334;
+    border-left: 3px solid #557;
+    cursor: pointer;
+}
+
+ul#listVideos>li>span {
+    font-size: 14pt;
+    margin-right: 0.25em;
+}
+
+ul#listVideos>li[watched="true"]{
+    background-color: rgb(52, 68, 51);
+    color: rgb(95, 209, 87);
+}
+ul#listVideos>li:hover[watched="true"]{
+    color: rgb(147, 241, 140);
+    cursor: pointer;
+}
+
+ul#listVideos>li[isthis="true"]{
+    filter: brightness(1.2);
+    border-left: 5px solid var(--color0);
+}
+
+/* DIV MAIN */
+
+div#main {
+    background-color: #e3e3ff;
+    padding: 1em;
+    overflow-y: scroll;
+    contain: size;
+}
+
+video#videoAula {
+    width: 75%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border-radius: 1em;
+    display: block;
+    margin-block: 1em;
+}
+
+hr {
+    border: 0px;
+    height: 2px;
+    background-color: #335;
+}
+
+h3[data-curso="title"] {
+    color: #224;
+}
+
+[data-curso="desc"] {
+    color: #113;
+    font-family: monospace;
+    font-size: 12pt;
+    display: block;
+    margin-top: 0.25em;
+}
+
+/* COMMENTS */
+
+#messageAlert{
+    color: red;
+    font-family: monospace;
+}
+
+#messageAlert[active="false"]{
+display: none;
+}
+
+/* Input Box of Text Message */
+
+[data-message="inputText"] {
+    margin: 2em 0.25em;
+    width: calc(100% - 2em);
+    height: 4.5em;
+    contain: layout;
+}
+
+[data-message="inputText"]>textarea {
+    padding: 0.5em;
+    border: 1px solid gray;
+    border-radius: 0.5em 0px 0px 0.5em;
+    outline: none;
+    width: calc(100% - 5em);
+    height: 100%;
+    height: 100%;
+    resize: none;
+    transition: all 500ms;
+}
+
+[data-message="btnSend"] {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    width: 4.5em;
+    height: 100%;
+    border-radius: 0px 0.5em 0.5em 0px;
+    border: none;
+    background-color: var(--color0);
+    font-size: 12pt;
+    color: white;
+    font-family: 'Acme';
+}
+
+[data-message="btnSend"]:hover {
+    background: #24a3ca;
+    cursor: pointer;
+}
+
+[data-comments="list"]>li {
+    margin-block: 0.2em;
+    padding: 0.25em 1em;
+    background: #bbe;
+    list-style: none;
+    border-radius: 0.2em;
+    border: 1px solid #99b;
+    contain: layout;
+}
+
+[data-comments="list"]>li>p:nth-child(1),
+[data-comments="list"]>li>details>ul>li>p:nth-child(1) {
+    font-family: 'Acme';
+    font-size: 12pt;
+    font-weight: bolder;
+}
+
+[data-comments="list"]>li>p:nth-child(2),
+[data-comments="list"]>li>details>ul>li>p:nth-child(2) {
+    font-family: system-ui;
+    width: calc(100% - 7em);
+}
+
+[data-comments="list"]>li>span {
+    display: flex;
+    width: 8em;
+    margin: 0.25em 1em;
+    font-family: system-ui;
+    font-size: 10pt;
+    color: #557;
+    background: #9ec5ff;
+    padding: 0.25em 1em;
+    border: 1px solid #557;
+    border-radius: 0.25em;
+    user-select: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-top: -1.5em;
+    z-index: 10;
+    position: relative;
+}
+
+[data-comments="list"]>li>span[subSend="false"]:hover {
+    background: #8bafe4;
+    cursor: pointer;
+}
+
+/* Sub Message */
+
+span[subSend]>* {
+    display: none;
+}
+
+span[subSend="false"]>p {
+    display: flex;
+    flex-direction: row;
+    font-weight: bolder;
+    align-items: center;
+}
+
+span[subSend="false"]>p>span{
+    position: absolute;
+    left: 2.5%;
+    font-size: 12pt;
+    top: calc(100% - 14pt);
+}
+
+span[subSend="true"] {
+    width: 95% !important;
+    height: 6em;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+}
+
+span[subSend="true"]>div {
+    display: flex;
+    width: 5em;
+    height: 100%;
+    flex-direction: column;
+}
+
+span[subSend="true"]>div>button{
+    width: 100%;
+    height: 100%;
+}
+
+span[subSend="true"]>textarea {
+    display: block;
+    resize: none;
+    height: 100%;
+    width: inherit;
+    border-radius: 0.25em;
+    margin-inline: 1em;
+    padding: 0.5em;
+    outline: none;
+}
+
+/* Buttons of Sub Message */
+
+span[subsend]>div>button{
+    border: none;
+    background-color: #1de135;
+    font-size: 12pt;
+    border-radius: 0.5em 0.5em 0px 0px;
+    font-family: 'Acme';
+}
+
+span[subsend]>div>button:nth-child(2){
+    background-color: #e11d1d;
+    border-radius: 0px 0px 0.5em 0.5em;
+}
+
+span[subsend]>div>button:hover{
+    filter: contrast(0.85) brightness(1.2);
+    cursor: pointer;
+}
+
+/* Comments */
+
+[data-comments="list"]>li>details{
+    width: calc(100% - 10em);
+    min-height: 2em;
+    margin: 0.25em;
+    background: #446;
+    border-radius: 0.25em;
+    padding: 0.5em;
+    user-select: none;
+}
+
+[data-comments="list"]>li>details>summary{
+    height: 1.5em;
+    background: var(--color0);
+    border-radius: 0.25em;
+    padding: 0.25em 1em;
+    display: flex;
+    align-items: center;
+    font-size: 13pt;
+    font-family: 'Acme';
+}
+
+[data-comments="list"]>li>details:not([open]):hover{
+    cursor: pointer;
+}
+
+[data-comments="list"]>li>details>ul>li{
+    margin-block: 0.2em;
+    padding: 0.25em 1em;
+    background: #bbe;
+    list-style: none;
+    border-radius: 0.2em;
+    border: 1px solid #99b;
+    contain: layout;
+}
+
+
+@media only screen and (max-width: 600px)  {
+
+    main{
+        display: flex;
+        flex-direction: column;
+    }
+
+    div#listVideos{
+        height: 14em;
+    }
+
+    div#main{
+        height: 100%;
+    }
+
+    video#videoAula{
+        width: 100%;
+    }
+}
+
+/* LOADER */
+
+li.liLoad::after{
+    content: "";
+    animation: points 0.5s infinite linear forwards;
+}
+
+@keyframes points {
+    0%{ content: "";}
+    25%{ content: ".";}
+    50%{ content: "..";}
+    75%{ content: "...";}
+    100%{ content: "...";}
+}

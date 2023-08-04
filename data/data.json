@@ -1,0 +1,38 @@
+{
+    "curso":{
+        "curso001":{
+            "name":"Crie seu site",
+            "preDesc":"Aprenda a desenvolver o seu primeiro site utilizando HTML.",
+            "desc": "",
+            "video":{
+                "ep1":{
+                    "name":"Seja Bem vindo",
+                    "desc": "Opa! Bem-vindo ao curso de HTML<br>Nesse curso vou ensinar a como programar o seu primeiro jogo no Scratch, um site que te permite criar jogos online e de uma maneira muito fácil.",
+                    "type": "text"
+                },
+                "ep2":{
+                    "name":"Começando a programar",
+                    "desc": "Opa! Neste vídeo, vou ensinar HTML de uma maneira rápida e eficiente. Não vou entrar muito no assunto, mas se tiver alguma dúvida, escreva nos comentários!",
+                    "type": "video"
+                }
+            }
+        },
+        "curso002":{
+            "name":"Seu 1º joguinho",
+            "preDesc":"Crie o seu primeiro jogo divertido de uma maneira muito fácil.",
+            "desc": "",
+            "video":{
+                "ep1":{
+                    "name":"Introdução",
+                    "desc":"Olá, eu sou o <b>Filipe</b> e gostaria de convidá-lo para o curso 'Seu 1º joguinho'. <br><br>O Scratch é uma plataforma de programação visual, ideal para iniciantes. <br>Nele, você aprenderá a desenvolver um jogo passo a passo, sem a necessidade de conhecimento prévio em programação.<br><br>Explore sua criatividade, crie personagens, defina regras e adicione interatividade. Prepare-se para embarcar em uma jornada divertida e educativa rumo ao mundo da criação de jogos! <br><br>Venha aprender e se divertir comigo no universo do Scratch!",
+                    "type": "text"
+                },
+                "ep2":{
+                    "name":"O basico",
+                    "desc": "Seja bem-vindo ao curso de criando o seu primeiro jogo no Scratch!<br>Acesse o scratch: <a href='https://scratch.mit.edu/'>https://scratch.mit.edu/</a>",
+                    "type":"video"
+                }
+            }
+        }
+    }
+}

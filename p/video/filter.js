@@ -1,3 +1,7 @@
+/*
+Filtro de palavras maliciosas.
+*/
+
 class FILTERMSG{
     constructor(msg){
         this.msg = msg;

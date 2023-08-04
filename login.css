@@ -1,0 +1,7 @@
+@import url('./css/default.css');
+
+#fromLR{
+    width: auto;
+    min-height: 25em;
+    display: flex;
+}

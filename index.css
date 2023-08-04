@@ -1,0 +1,225 @@
+@import url('./css/default.css');
+
+body {
+    background: rgb(247, 247, 247);
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    display: flex;
+}
+
+/* MAIN SECTION */
+section#main {
+    background: linear-gradient(135deg, hsl(92, 75%, 57%), hsl(196, 51%, 49%));
+    width: 100%;
+    height: 17em;
+    flex-direction: row;
+}
+
+section#main>div {
+    width: 100%;
+    height: 100%;
+}
+
+section#main>div:nth-child(1) {
+    padding: 2em 1em 2em 2em;
+    display: flex;
+    justify-content: center;
+}
+
+section#main>div:nth-child(2) {
+    padding: 2em 2em 2em 1em;
+}
+
+section#main>div>img {
+    transform: scale(1.25);
+    display: block;
+    height: 100%;
+    border-radius: 1em;
+    aspect-ratio: 16 / 9;
+    animation: animIMG 5s forwards infinite ease-in-out;
+}
+
+@keyframes animIMG{
+    0%{
+        transform: scale(1.25);
+    }
+    50%{
+        transform: scale(1.35);
+    }
+    100%{
+        transform: scale(1.25);
+    }
+}
+
+section#main>div>h2 {
+    font-family: 'Acme';
+    font-size: 24pt;
+    color: white;
+    filter: drop-shadow(2px 2px 0px black);
+}
+
+section#main>div>p {
+    font-family: 'Acme';
+    font-size: 18pt;
+    color: white;
+    filter: drop-shadow(2px 2px 0px black);
+}
+
+button.sbtn {
+    width: min-content;
+    padding: 0.35em 2em;
+    border-radius: 0.25em;
+    font-family: 'Acme';
+    color: var(--color0);
+    font-size: 18pt;
+    border: none;
+    background-color: #eee;
+    border-bottom: 8px solid var(--color0);
+    transition: transform 50ms;
+}
+
+button.sbtn:hover {
+    background-color: rgb(219, 251, 255);
+    cursor: pointer;
+}
+
+button.sbtn:active {
+    transform: scale(0.9);
+    background: #fff;
+    color: aqua;
+    border-bottom-color: aqua;
+    transition: transform 0ms;
+}
+
+/* SECTION - CURSOS */
+
+section#barCursos {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
+
+section#barCursos>h2 {
+    font-family: 'Acme';
+}
+
+div#barCursos {
+    width: 100%;
+    min-height: 10em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 15em);
+    grid-auto-rows: 20em;
+    padding-block: 0.25em;
+}
+
+.curso-item {
+    display: flex;
+    flex-direction: column;
+    background-color: #eee;
+    border-radius: 0.5em;
+    filter: drop-shadow(2px 3px 2px rgba(0, 0, 0, 25%));
+    width: auto;
+    height: auto;
+    border: 2px solid #336;
+    border-bottom-width: 5px;
+    margin: 1em;
+    contain: paint;
+    transition: all 150ms;
+}
+
+.curso-item:hover {
+    cursor: pointer;
+    transform: scale(1.1) translateY(-10px);
+    filter: drop-shadow(2px 8px 4px rgba(0, 0, 0, 25%));
+}
+
+.curso-item>div[name="cap"] {
+    display: block;
+    width: 100%;
+    height: 40%;
+    background-image: url(https://pps.whatsapp.net/v/t61.24694-24/359695030_920175579080905_7446662965700960668_n.jpg?ccb=11-4&oh=01_AdTTlDzEYwEHbvKakHxGiLKBhrDIDg1_uj_2VWVBWWXfWA&oe=64CBE46F);
+    background-size: cover;
+    background-position: center;
+}
+
+.curso-item>div:not([name="cap"]) {
+    width: 100%;
+    height: auto;
+    padding: 1em;
+    user-select: none;
+}
+
+.curso-item>div:not([name="cap"]) > p{
+    font-family: system-ui;
+    font-size: 11pt;
+    text-align: justify;
+}
+
+/* LIVROS */
+
+section#barBooks{
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+}
+
+section#barBooks>div{
+    color: white;
+    background: linear-gradient(45deg, #902ca9, #4b49bf);
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    padding: 1em;
+    border-radius: 1em;
+    min-height: 7em;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+section#barBooks>div>div{
+    width: 75%;
+}
+
+section#barBooks>div>div>p{
+    font-family: cursive;
+    text-align: justify;
+}
+
+section#barBooks>div>button{
+    width: 6.5em;
+    height: 2.5em;
+    background: #eee;
+    font-family: 'Acme';
+    font-size: 12pt;
+    border: none;
+    border-radius: 1em;
+}
+
+section#barBooks>div>button:hover{
+    background: #ddb2e7;
+    cursor: pointer;
+}
+
+section#barBooks>div>button:active{
+    transform: scale(0.95);
+}
+
+/* MEDIA AJUST */
+
+@media only screen and (max-width: 700px)  {
+    
+    section#main>div:nth-child(1){
+        display: none;
+    }
+
+    section#main>div:nth-child(2){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+}

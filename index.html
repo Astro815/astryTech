@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AstryTech</title>
+        <link rel="stylesheet" href="./index.css">
+    </head>
+    <body>
+        <iframe id="headerFrame" src="./p/header.html" frameborder="0"></iframe>
+        <!-- Main Section -->
+        <section id="main">
+            <div>
+                <img src="assets/icoHome.png" alt="figura decorativa">
+            </div>
+            <div>
+                <h2>Invente e explore novas ferramentas!</h2>
+                <p>Desperte o futuro: Abra caminhos na mente com programação e tecnologia!</p>
+                <br>
+                <button class="sbtn" onclick="window.open('#barCursos', '_top')">Aprender</button>
+            </div>
+        </section>
+        <!-- Cursos Section -->
+        <section id="barCursos">
+            <h2>Cursos</h2>
+            <div id="barCursos">
+                Carregando...
+            </div>
+        </section>
+        <hr>
+        <!-- Books Section -->
+        <section id="barBooks">
+            <h2>Livros</h2>
+            <div>
+                <div>
+                    <h2>Leitura!</h2>
+                    <p>Descubra novos mundos e enriqueça sua mente através da leitura! Benefícios como ampliar o conhecimento, estimular a imaginação e reduzir o estresse aguardam você. Acesse "Leia Paraná" e comece essa jornada fascinante agora!</p>
+                </div>
+                <button onclick="window.open('https://leiaparana.odilo.us', '_top')">Leia agora!</button>
+            </div>
+        </section>
+    </body>
+    <script src="./js/firebase.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./index.js"></script>
+</html>

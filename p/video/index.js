@@ -1,4 +1,4 @@
-pathData = "../../.";
+pathData = "../.";
 importFireBase();
 
 let curso = null;
